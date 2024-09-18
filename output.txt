@@ -1,0 +1,683 @@
+HTTP Status Code after login: 200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sign In | LabArchives</title>
+<link href="/apple-touch-icon.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/apple-touch-icon-60x60.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apple-touch-icon-76x76.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apple-touch-icon-120x120.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apple-touch-icon-152x152.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apple-touch-icon-180x180.png?v=oLBdP9OLn2" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png?v=oLBdP9OLn2" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png?v=oLBdP9OLn2" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest?v=oLBdP9OLn2" rel="manifest"/>
+<link color="#59276e" href="/safari-pinned-tab.svg?v=oLBdP9OLn2" rel="mask-icon"/>
+<link href="/favicon.ico?v=oLBdP9OLn2" rel="shortcut icon"/>
+<meta content="#59276e" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!--Google Analytics 4-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-WRCH66LJ27"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WRCH66LJ27');
+    </script>
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  const isTwa = false || !!sessionStorage.getItem("isTwa") || searchParams.get("twa") !== null;
+  if (isTwa) {
+        sessionStorage.setItem("isTwa", "true");
+        if (isTwa && true) {
+      if (!searchParams.has("twa")) {
+        searchParams.append("twa", "");
+        const searchParamsString = `?${searchParams.toString()}`;
+        window.location.href = `${window.location.protocol}//${window.location.host}${window.location.pathname}${searchParamsString}${window.location.hash}`;
+      }
+    }
+        if (searchParams.get("twa") !== null) {
+      searchParams.delete("twa");
+      const searchParamsString = searchParams.toString().length > 0 ? "?" + searchParams.toString() : "";
+      const newWindowLocationUrl = window.location.protocol + "//" + window.location.host + window.location.pathname +  searchParamsString + window.location.hash;
+      history.replaceState(null, '', newWindowLocationUrl);
+    }
+  }
+</script>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="DI7T4pMnJPJotfv2KTdbz9FH7Jly1tGG4Mu9wFfJIb8=" name="csrf-token"/>
+<style>
+    body {
+      background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/4gJASUNDX1BST0ZJTEUAAQEAAAIwQURCRQIQAABtbnRyUkdCIFhZWiAHzwAGAAMAAAAAAABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLUFEQkUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApjcHJ0AAAA/AAAADJkZXNjAAABMAAAAGt3dHB0AAABnAAAABRia3B0AAABsAAAABRyVFJDAAABxAAAAA5nVFJDAAAB1AAAAA5iVFJDAAAB5AAAAA5yWFlaAAAB9AAAABRnWFlaAAACCAAAABRiWFlaAAACHAAAABR0ZXh0AAAAAENvcHlyaWdodCAxOTk5IEFkb2JlIFN5c3RlbXMgSW5jb3Jwb3JhdGVkAAAAZGVzYwAAAAAAAAARQWRvYmUgUkdCICgxOTk4KQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAAAAAAAAAAAAAAAGN1cnYAAAAAAAAAAQIzAABjdXJ2AAAAAAAAAAECMwAAY3VydgAAAAAAAAABAjMAAFhZWiAAAAAAAACcGAAAT6UAAAT8WFlaIAAAAAAAADSNAACgLAAAD5VYWVogAAAAAAAAJjEAABAvAAC+nP/bAEMAEAsMDgwKEA4NDhIREBMYKBoYFhYYMSMlHSg6Mz08OTM4N0BIXE5ARFdFNzhQbVFXX2JnaGc+TXF5cGR4XGVnY//bAEMBERISGBUYLxoaL2NCOEJjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY//AABEIABsAKAMBEQACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAADBAUCAQb/xAAtEAACAQMBBQYHAQAAAAAAAAABAwIABBEhEjEyQVEFEyIzUoEVRGFic5Oh0f/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAYEQEBAQEBAAAAAAAAAAAAAAAAEQECMf/aAAwDAQACEQMRAD8AQVf2oZGcVknOsTEYP9rpXOKUr2zQxi2gRI+0nny11pVD+IdniWpjuzw6Y/2lBBeWb5wgkbWfoQPfpSifK8tdozkuQlvAAGB/aVIRVePAgDanQ8WDoNfbnWc7xYeRBD+0mhyQYhkyTLcckab636grbO1i2CQhZBnsmY1GNo7zUHHKt1XsIphGI76JGyMdR1NB59kPHIBDDg8hWLiqqbe0V5UsH8lbmJVK1Kox8V5OPQRdjFIUyZJPzzv30i0tcSSQQbtsgdNXZpEqe61tHeZPa1znvNaQqctswOI1AeDWes1Rrvmes0RiTmes0UGbmAcZqD//2Q==) no-repeat fixed;
+      background-size: cover;
+      border-image-repeat: stretch;
+      background-position: center top;
+    }
+  </style>
+<script src="/javascripts/jquery.min.js?1725398682" type="text/javascript"></script>
+<script src="/javascripts/jrails.js?1725398355" type="text/javascript"></script>
+<script src="/javascripts/application.js?1725398355" type="text/javascript"></script>
+<link href="/javascripts/bootstrap/css/bootstrap.min.css?1725398682" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/javascripts/bootstrap/js/bootstrap.min.js?1725398682" type="text/javascript"></script>
+<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css?1725398355" media="all" rel="stylesheet" type="text/css"/>
+<script src="/javascripts/underscore/underscore-umd-min.js?1725398682" type="text/javascript"></script>
+<link href="/stylesheets/la_bootstrap.css?1725398355" media="all" rel="stylesheet" type="text/css"/>
+<link href="/stylesheets/la_sign_in.css?1725398355" media="all" rel="stylesheet" type="text/css"/>
+<link href="/stylesheets/la_bootstrap_ns.min.css?1725398355" media="all" rel="stylesheet" type="text/css"/>
+<link href="/stylesheets/la_bootstrap_ns_custom.min.css?1725398563" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="la-background--blurred"></div>
+<div id="la-background"></div>
+<script>
+  function load_background() {
+    var img;
+    if (!('addEventListener' in window)) {
+      return;
+    }
+    img = new Image();
+    img.onload = function() {
+      document.getElementById('la-background').className = 'la-background--visible';
+      setTimeout(function() {
+        var la_background__blurred = document.getElementById('la-background--blurred');
+        la_background__blurred.parentNode.removeChild(la_background__blurred);
+      }, 1000);
+    };
+    img.src = '/images/backgrounds/sign_in.jpg';
+  }
+  load_background();
+</script>
+<nav class="navbar navbar-default navbar-fixed-top la-navbar">
+<div class="navbar-header">
+<div class="la-bootstrap">
+<div class="la-navbar-left-nav col-auto col-xl m-0 p-0 nav">
+<a aria-label="LabArchives - Sign in" class="ml-2 navbar-brand" href="https://www.labarchives.com" rel="noopener noreferrer" style="margin-left:8px !important;" target="_blank" title="LabArchives: Your Electronic Laboratory Notebook">
+<img alt="Labarchives icon" aria-hidden="true" class="la-navbar__logo-icon d-inline" src="/images/la_icon_logo_no_tag_light.svg"/>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class="container la-login">
+<div class="la-login__carousel-container">
+<div class="la-login__messages" id="la-login__messages">
+<div class="collapse fade" id="la-login__errors-container">
+<div class="alert alert-warning la-login__alert la-login__errors">
+<div style="display: inline-block;">
+<div aria-labelledby="la-login__errors-flash">
+<div role="document">
+<i aria-hidden="true" class="fa fa-exclamation-triangle" style="display:inline-block;width:24px;line-height:20px;font-size:18px;vertical-align:top;"></i>
+<div class="la-login__errors-flash" id="la-login__errors-flash">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="la-login__errors-flash-sr-only" class="visually-hidden">
+<div role="document">
+<div id="la-login__errors-flash-sr-only">
+</div>
+</div>
+</div>
+<div class="carousel slide la-login__carousel la-login__carousel--slide-fade" data-bs-interval="false" data-bs-ride="false">
+<h1 class="la-login__heading" id="la-login__heading">Sign in</h1>
+<div class="la-login__fade la-login__fade--left"></div>
+<div class="carousel-inner" style="">
+<div class="carousel-item active la-login__page">
+<script>
+  $(document).ready(function () {
+    $('#email').focus();
+    
+    $('#email').on('keypress', function(event) {
+      
+      if (event.keyCode != 13) {
+        $('[name=password]:first').val('');
+      }
+    });
+    $('#email').on('keydown', function(event) {
+      
+      if (event.keyCode == 8 || event.keyCode == 46) {
+        $('[name=password]:first').val('');
+      }
+    });
+  });
+
+  
+  function handle_email() {
+    var $email_next = $('#la-login__email-next');
+    $email_next.prop('disabled', true);
+
+    var $email = $("#email");
+    var $email_form_group = $email.closest('.form-control');
+    var $email_flash_error = $email.next('.la-flash-error');
+
+    var email_valid = isValidEmailAddress($email.val());
+
+    return handle_flash_error(email_valid, $email_form_group, $email_flash_error, $email_next);
+  }
+
+  function open_shib(sel){
+    window.open('https://aushib.labarchives.com?siteID='+sel.options[sel.selectedIndex].value+'','_self');
+  }
+</script>
+<form action="/sessions/email_next" id="la-login__email" method="post" onsubmit="if (! handle_email()) { return false; }; jQuery.ajax({beforeSend:function(request){handle_login_obfuscate(true);ajax_loading();}, complete:function(request){ajax_loaded()}, data:jQuery.param(jQuery(this).serializeArray()) + '&amp;authenticity_token=' + encodeURIComponent('DI7T4pMnJPJotfv2KTdbz9FH7Jly1tGG4Mu9wFfJIb8='), dataType:'script', type:'post', url:'/sessions/email_next'}); return false;"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="DI7T4pMnJPJotfv2KTdbz9FH7Jly1tGG4Mu9wFfJIb8="/></div> <div class="mb-3 mt-1">
+<label class="form-label" for="email">
+        Email address</label>
+<input aria-required="true" autocomplete="on" autofocus="true" class="form-control" id="email" name="email" size="15" spellcheck="false" title="Enter Email address for LabArchives customer login" type="text"/>
+<span class="help-block la-flash-error fade collapse" id="la-login__email-error"><i aria-hidden="true" class="fa fa-exclamation-triangle"></i>Please enter a valid email address.</span>
+</div>
+<input aria-hidden="true" autocomplete="off" class="autofill--hidden" name="password" tabindex="-1" type="password"/>
+<input aria-label="Click here to continue" class="btn btn-purple btn-block la-login__next" id="la-login__email-next" name="commit" type="submit" value="Next"/>
+<p class="la_login__or"><span class="la_login__or-line--left"></span>or<span class="la_login__or-line--right"></span></p>
+<div class="form-group" style="font-size:14px;">
+<p style="text-align:center;font-weight:500;">
+            If your institution has enabled Single Sign-On, it will appear on the list below:
+          </p>
+<div class="la-select">
+<select class="form-control la-input" id="shib" name="shib" onchange="open_shib(this)" style="font-size:14px"><option>Sign in through your institution</option><option value="18">Australian National University</option>
+<option value="16">Baker</option>
+<option value="51">Bond University</option>
+<option value="17">Burnet Institute</option>
+<option value="20">Centre for Eye Research Australia</option>
+<option value="9">Children's Medical Research Institute</option>
+<option value="53">CSIRO</option>
+<option value="25">Curtin University SMLS</option>
+<option value="8">Garvan Institute</option>
+<option value="80">Griffith University</option>
+<option value="42">Heart Research Institute</option>
+<option value="29">La Trobe University</option>
+<option value="3">LabArchives for LA Employees</option>
+<option value="37">Macquarie University</option>
+<option value="5">Monash University</option>
+<option value="55">Murdoch Children's Research Institute</option>
+<option value="79">Olivia Newton-John Cancer Research Institute</option>
+<option value="19">Peter MacCallum Cancer Centre</option>
+<option value="86">Red Cross Lifeblood</option>
+<option value="24">St. Vincent's Institute</option>
+<option value="12">The Kids Research Institute</option>
+<option value="40">The University of Queensland</option>
+<option value="32">University of Adelaide</option>
+<option value="33">University of Melbourne</option>
+<option value="4">University of New South Wales</option>
+<option value="2">University of Sydney</option>
+<option value="48">University of Tasmania</option>
+<option value="22">University of Technology Sydney</option>
+<option value="14">Victor Chang Cardiac Research Inst</option>
+<option value="45">Walter and Eliza Hall Institute</option></select>
+</div>
+</div>
+<div class="la-login__bottom">
+<span>Don't have an account?</span>
+<input aria-label="Don't have an account? Click here to sign up for free" class="btn btn-orange" id="create" name="commit" onclick="window.location.href = '/signup'" type="button" value="Sign up for free"/> </div>
+</form>
+</div>
+<div class="carousel-item la-login__page" id="la-login__password">
+</div>
+<div class="carousel-item la-login__page" id="la-login__forgot-password">
+</div>
+<div class="carousel-item la-login__page" id="la-login__resend-activate">
+</div>
+</div>
+<div class="la-login__fade la-login__fade--right"></div>
+<div class="la-obfuscator fade d-none">
+<div class="la-obfuscator__spinner">
+<img alt="Please wait" src="/images/spinner.svg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer la-footer">
+<div class="login_social_media">
+<a href="https://www.facebook.com/LabArchives" target="_blank"><img alt="Facebook" id="facebook" src="/images/facebooksquare.svg?1725398355"/></a>
+<a href="https://twitter.com/LabArchives" target="_blank"><img alt="Twitter" id="twitter" src="/images/twittersquare.svg?1725398355"/></a>
+<a href="https://www.youtube.com/labarchives" target="_blank"><img alt="YouTube" id="youtube" src="/images/youtubesquare.svg?1725398355"/></a>
+<a href="https://www.linkedin.com/company/labarchives-llc" target="_blank"><img alt="LinkedIn" id="linkedin" src="/images/linkedinsquare.svg?1725398355"/></a>
+<a href="https://www.instagram.com/labarchives" target="_blank"><img alt="Instagram" id="instagram" src="/images/instagramsquare.svg?1725398355"/></a>
+</div>
+<div><span class="la-login__copyright">©2024 LabArchives, LLC. All rights reserved.</span></div>
+</footer>
+<script>
+
+  
+  var la_login_timestamp = Date.now();  
+
+  
+  $('.la-login__carousel').on('slid.bs.carousel', function() {
+    handle_login_obfuscate(false);
+  });
+
+  
+  $('body').on('click', '.la-login__btn-back', function() {
+    history.back();
+  });
+
+  
+  $(window).on('popstate', function(e) {
+    $('#password').val('');
+    var state = history.state;
+    if (state === null) {
+      
+      login_page(false, 'email', 0);
+    }
+    else {
+      if (state.page_timestamp !== la_login_timestamp) {
+        
+        login_page(false, 'email', 0);
+      }
+      else {
+        login_page(false, state.page_number, state.page_index, state.page_heading);
+      }
+    }
+  });
+
+  
+  function next_page(next_page) {
+    var page_index = 0;
+    var page_heading = 'Sign in';
+    switch (next_page) {
+      case "password":
+        page_index = 1;
+        break;
+      case "forgot_password":
+        page_heading = 'Forgot your password?';
+        page_index = 2;
+        break;
+      case "reset_password":
+        page_heading = 'Reset your password?';
+        page_index = 2;
+        break;
+      case "resend_activate":
+        page_heading = 'Resend activation email?';
+        page_index = 3;
+        break;
+    }
+    login_page(true, next_page, page_index, page_heading);
+  }
+
+  
+  function login_page(push, page_number, page_index, page_heading) {
+    if (push) {
+      var state = { page_number: page_number, page_index: page_index, page_heading: page_heading, page_timestamp: la_login_timestamp };
+      history.pushState(state, '', window.location);
+    }
+    set_login_heading(page_heading);
+    if (page_index === 0) {
+      $('.la-login__btn-back').prop('disabled', true);
+    }
+    else {
+      $('.la-login__btn-back').prop('disabled', false);
+    }
+    
+    var myCarousel = document.querySelector('.la-login__carousel');
+    var carousel = new bootstrap.Carousel(myCarousel);
+    carousel.to(page_index);
+  }
+
+  
+  function set_login_heading(page_heading, no_fade, text_align) {
+    if (! page_heading) {
+      page_heading = 'Sign in';
+    }
+    var $la_login_heading = $('#la-login__heading');
+    $la_login_heading.css('text-align', text_align);
+    if ($la_login_heading.html() !== page_heading) {
+      if (no_fade) {
+        $la_login_heading.html(page_heading);
+      }
+      else {
+        $la_login_heading.fadeOut(300, function () {
+          $(this).html(page_heading).fadeIn(300);
+        });
+      }
+    }
+  }
+
+  
+  function handle_login_obfuscate(show, focus) {
+    var $la_obfuscator = $('.la-login').find('.la-obfuscator');
+    if (show) {
+      $la_obfuscator.removeClass('d-none');
+      _.defer(function() { $la_obfuscator.addClass('show'); });
+    }
+    else {
+      var $input = $('.la-login__carousel')
+          .find(
+              'input:enabled:visible:not(.autofill--hidden):first,' +
+              'textarea:enabled:visible:first,' +
+              'select:enabled:visible:first,' +
+              'button:enabled:visible:first')
+          .first();
+      if (! $la_obfuscator.hasClass('d-none')) {
+        _.delay(function() {
+          _.defer(function() {
+            hide_login_obfuscate($la_obfuscator, focus, $input);
+          });
+        }, 300);
+        _.defer(function() {
+          $la_obfuscator.removeClass('show');
+        });
+      }
+      else {
+        hide_login_obfuscate($la_obfuscator, focus, $input);
+      }
+    }
+  }
+
+  
+  function hide_login_obfuscate($la_obfuscator, focus, $input) {
+    $la_obfuscator.addClass('d-none');
+    if (focus !== false) {
+      $input.focus();
+    }
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  
+  
+  function handle_flash_error(valid, $form_group, $flash_error, $form_button) {
+    var will_hide_flash_error = should_hide_flash_error($form_group);
+    if (! valid) {
+      if (will_hide_flash_error) {
+        $flash_error.one('hidden.bs.collapse', function () {
+          show_flash_error($form_group, $flash_error, $form_button);
+        });
+        hide_flash_error($form_group, $flash_error);
+      }
+      else {
+        show_flash_error($form_group, $flash_error, $form_button);
+      }
+      return false;
+    }
+    else {
+      hide_flash_error($form_group, $flash_error, $form_button);
+    }
+    if ($form_button) {
+      $form_button.prop('disabled', false);
+    }
+    return true;
+  }
+
+  
+  function show_flash_error($form_group, $flash_error, $form_button) {
+    $form_group.addClass('is-invalid');
+    $flash_error.one('shown.bs.collapse', function () {
+      if ($form_button) {
+        $form_button.prop('disabled', false);
+      }
+      $form_group.find('input:visible')
+          .attr('aria-labelledby', $form_group.find('.help-block').attr('id'))
+          .attr('aria-invalid', 'true')
+          .focus();
+    });
+    $flash_error.collapse('show');
+  }
+
+  
+  function should_hide_flash_error($form_group) {
+    if ($form_group.hasClass('is-invalid')) {
+      return true;
+    }
+    return false;
+  }
+
+  
+  function hide_flash_error($form_group, $flash_error, $form_button) {
+    $form_group.removeClass('is-invalid');
+    $flash_error.collapse('hide');
+    $form_group.find('input:visible')
+        .attr('aria-labelledby', '')
+        .attr('aria-invalid', 'false');
+    if ($form_button) {
+      $form_button.prop('disabled', false);
+    }
+  }
+
+  
+  
+  function handle_login_error(focus_selector, error_id, message, callback) {
+    if ($('#la-login__errors-container').hasClass('collapsing')) {
+      _.delay(handle_login_error, 300, focus_selector, error_id, message, callback);
+      return;
+    }
+    show_login_error(focus_selector, error_id, message, callback);
+  }
+
+  
+  
+  function show_login_error(focus_selector, error_id, message, callback) {
+    var $error = $('#' + error_id);
+    var $error_sr_only = $('#' + error_id + '-sr-only');
+    if (message !== false
+    &&  message !== 'false') {
+      $error.html(message);
+    }
+    $error_sr_only.html($error.html());
+    
+    if (callback) {
+      callback();
+    }
+    _.defer(function() {
+      $(focus_selector)
+          .attr('aria-invalid', 'true')
+          .focus();
+      
+      $(focus_selector).on('focus', function() {
+        $error_sr_only.parent().parent().removeAttr('role', 'alert').removeAttr('aria-live', 'polite').css('display', 'none');
+        _.defer(function() {
+          $error_sr_only.parent().parent().attr('role', 'alert').attr('aria-live', 'polite').css('display', 'block');
+        });
+      });
+      
+      $error_sr_only.parent().parent().removeAttr('role', 'alert').removeAttr('aria-live', 'polite').css('display', 'none');
+      _.defer(function() {
+        $error_sr_only.parent().parent().attr('role', 'alert').attr('aria-live', 'polite').css('display', 'block');
+      });
+      $('#la-login__errors-container').collapse('show');
+      handle_login_obfuscate(false, false);
+    });
+  }
+
+  
+  
+  function set_next_button_focus($input, $button_when_valid, $button_when_invalid, callback) {
+    
+    $input.on("keydown", {
+      button_when_valid: $button_when_valid,
+      button_when_invalid: $button_when_invalid,
+      callback: callback
+    }, next_button_focus);
+  }
+
+  
+  function next_button_focus(event) {
+    var $button_when_valid = event.data.button_when_valid;
+    var $button_when_invalid = event.data.button_when_invalid;
+    var callback = event.data.callback;
+    
+    if (event.keyCode === 9 && event.shiftKey === false) {
+      
+      event.preventDefault();
+      
+      callback();
+      
+      $button_when_valid.prop("disabled") ? $button_when_invalid.focus() : $button_when_valid.focus();
+    }
+  }
+</script>
+<script>
+  var server_region = 'au';
+  const regions = {"us":{"url":"https://mynotebook.labarchives.com","description":"Rest of the world","definite_article":true},"au":{"url":"https://au-mynotebook.labarchives.com","description":"Australia or New Zealand"},"gb":{"url":"https://uk-mynotebook.labarchives.com","description":"United Kingdom","definite_article":true},"eu":{"url":"https://eu-mynotebook.labarchives.com","description":"Europe","definite_article":true}};
+  
+  $(document).ready(function () {
+            var time_zone = getTimeZone() * -1;
+    $.ajax({
+      url: '/sessions/region',
+      data: { time_zone_offset: time_zone }
+    })
+        .done(function(tz_region) {
+                    if (server_region != ''
+          &&  regions.hasOwnProperty(tz_region)
+          &&  tz_region != server_region) {
+            var $la_msg_dlg__region = $('#la_msg_dlg__region');
+
+            
+            var region_keys = _.sortBy(_.keys(regions), function(key) {
+              return regions[key]['description'];
+            });
+            region_keys.push(region_keys.splice(region_keys.indexOf('us'), 1)[0]);
+
+            
+            _.each(region_keys, function(key) {
+
+              
+              if (key !== server_region
+              &&  key !== tz_region
+                                          ) {
+                return;
+              }
+
+              var $la_msg_dlg__region_radio = $la_msg_dlg__region.find('.la_msg_dlg__region-radio');
+
+              
+              if ($la_msg_dlg__region_radio.find('.la-input').attr('id')) {
+                $la_msg_dlg__region_radio = $la_msg_dlg__region_radio.first().clone();
+
+                if (key === tz_region) {
+                  
+                  $la_msg_dlg__region_radio.prependTo('.la_msg_dlg__region-radios');
+                }
+                else {
+                  
+                  $la_msg_dlg__region_radio.appendTo('.la_msg_dlg__region-radios');
+                }
+              }
+
+              region = regions[key];
+
+              
+              $la_msg_dlg__region_radio.find('.la-input')
+                  .attr('id', 'la-login__region-' + key)
+                  .data('key', key)
+                  .val(region['url']);
+
+              
+              $la_msg_dlg__region_radio.find('.la-radio')
+                  .attr('for', 'la-login__region-' + key);
+
+              
+              $la_msg_dlg__region_radio.find('.la-login__region-description')
+                  .html(region['description']);
+
+              
+              $la_msg_dlg__region_radio.find('.la-login__region-url')
+                  .html(region['url']);
+            });
+
+            
+            $('#la-login__region-' + tz_region)
+                .prop('checked', true);
+            $('[for=la-login__region-' + tz_region + ']')
+                .wrapInner('<strong>')
+                .find('.la-login__region-description').append('<br />(Recommended)');
+
+            
+            $('.la-msg-dlg__ok-button').on('click', function() {
+              $checked = $('input[name=la-login__region]:checked');
+              if ($checked.data('key') !== server_region) {
+                window.location.href = $checked.val();
+              }
+            });
+            $la_msg_dlg__region.one('shown.bs.modal', function() {
+              $la_msg_dlg__region.find('button:visible:eq(-2)').focus();
+            });
+            $la_msg_dlg__region.modal('show');
+          }
+        });
+        
+  });
+</script>
+<style>
+  @media (max-width: 575px) {
+    .la-login__region-url {
+      font-size: 14px;
+    }
+  }
+</style>
+<div class="modal fade" id="la_msg_dlg__region" role="alertdialog">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">LabArchives Sign In Notice</h4>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body">
+<p>
+                      It looks like you might prefer to use a different LabArchives site.<br/><br/>
+                    For the best LabArchives experience, we recommend you use:
+        </p>
+<div class="la_msg_dlg__region-radios" style="margin-left: 15px;">
+<div class="la_msg_dlg__region-radio">
+<input class="la-input" name="la-login__region" type="radio"/>
+<label class="la-radio" style="padding-right: 0;">
+<span class="la-radio_outer-circle"></span>
+<span class="la-radio_inner-circle"></span>
+<div class="la-login__region-description ps-1" style="min-width: 200px;">
+</div>
+<div class="la-login__region-url ps-1">
+</div>
+</label>
+</div>
+</div>
+<p style="margin-top: 16px;">
+                      Please select one of these sites, or feel free to stay on this current site.
+                  </p>
+</div>
+<div class="modal-footer">
+<button class="la-msg-dlg__ok-button btn btn-purple" data-bs-dismiss="modal" type="button">
+                      Yes - take me to the selected site
+                  </button>
+<button class="la-msg-dlg__cancel-button btn btn-orange" data-bs-dismiss="modal" type="button">No - I want to stay here</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+          .register("/sw.js")
+          .then(function (registration) {
+                        if (registration) {
+                            if (registration.waiting) {
+                                registration.waiting.postMessage("SKIP_WAITING")
+              }
+                            registration.addEventListener("updatefound", () => {
+                                if (registration.installing) {
+                                    registration.installing.addEventListener("statechange", () => {
+                                        if (registration.waiting) {
+                                            if (navigator.serviceWorker.controller) {
+                                                registration.waiting.postMessage("SKIP_WAITING")
+                      }
+                    }
+                  })
+                }
+              });
+            }
+          });
+    });
+  }
+</script>
+</body>
+</html>
+
